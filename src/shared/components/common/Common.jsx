@@ -1,5 +1,5 @@
 import {View, ActivityIndicator, StyleSheet, Text} from 'react-native';
-import {COLORS, SPACING, FONT_SIZE} from '../constants/theme';
+import {COLORS, SPACING, FONT_SIZE} from '../../constants/theme';
 
 export const LoadingSpinner = () => (
     <View>

@@ -1,5 +1,5 @@
 import {TextInput, View, Text, StyleSheet} from 'react-native';
-import {COLORS, SPACING, FONT_SIZE} from '../constants/theme';
+import {COLORS, SPACING, FONT_SIZE} from '../../constants/theme';
 
 const Input = ({label, error, ...props}) => {
     return (
@@ -7,7 +7,7 @@ const Input = ({label, error, ...props}) => {
         <View style={styles.container}> 
         {label && <Text style={styles.label}>{label}</Text>}
         <TextInput
-            style={[styles.input, error && styles.errorInput]}
+            style={[styles.input, error && styles.inputError]}
             placeholderTextColor={COLORS.secondary}
             {...props}
         />
@@ -47,3 +47,5 @@ const Input = ({label, error, ...props}) => {
     },
 });
   
+export default Input;
+
