@@ -11,7 +11,7 @@ export const COLORS = {
     warning: "#f59e0b", // Amber 500
     border: "#e2e8f0", // Slate 200
 };
- 
+
 export const SPACING = {
     xs: 4,
     sm: 8,
@@ -20,7 +20,7 @@ export const SPACING = {
     xl: 32,
     xxl: 48,
 };
- 
+
 export const FONT_SIZE = {
     xs: 12,
     sm: 14,
@@ -30,7 +30,7 @@ export const FONT_SIZE = {
     xxl: 24,
     huge: 32,
 };
- 
+
 export const SHADOWS = {
     sm: {
         shadowColor: "#000",
@@ -47,5 +47,3 @@ export const SHADOWS = {
         elevation: 5,
     },
 };
- 
- 

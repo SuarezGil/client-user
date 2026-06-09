@@ -1,9 +1,11 @@
-import {NavigationContainer} from '@react-navigation/native';
-import {View, ActivityIndicator, StyleSheet} from 'react-native';
-import{ COLORS } from '../shared/constants/theme';
-import AuthStack from './AuthStack';
+
+import { NavigationContainer } from "@react-navigation/native";
+import { View, ActivityIndicator, StyleSheet } from "react-native";
+import { COLORS } from "../shared/constants/theme";
+import AuthStack from "./AuthStack";
 
 const AppNavigator = () => {
+
     return (
         <NavigationContainer>
             <AuthStack />
@@ -11,7 +13,6 @@ const AppNavigator = () => {
     )
 }
 
-export default AppNavigator;
 const styles = StyleSheet.create({
     loadingContainer: {
         flex: 1,
@@ -20,4 +21,5 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.background,
     },
 });
- 
+
+export default AppNavigator;
