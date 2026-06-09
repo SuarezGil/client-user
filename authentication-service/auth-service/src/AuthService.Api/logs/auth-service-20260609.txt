@@ -44,3 +44,56 @@ System.Security.Cryptography.CryptographicException: Error occurred during a cry
 [2026-06-09 16:14:07 INF] Database ready. Running seed data... {"SourceContext":"Program"}
 [2026-06-09 16:14:07 INF] Database initialization completed successfully {"SourceContext":"Program"}
 [2026-06-09 16:14:07 INF] AuthService API is running at http://0.0.0.0:5156. Health endpoint: http://0.0.0.0:5156/health {"SourceContext":"Program"}
+[2026-06-09 16:48:11 INF] HTTP GET /api/v1/auth responded 404 in 9.7888 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNM6F4NDF3OM:00000001","ConnectionId":"0HNM6F4NDF3OM"}
+[2026-06-09 16:48:11 INF] HTTP GET /favicon.ico responded 404 in 0.5367 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNM6F4NDF3OM:00000002","ConnectionId":"0HNM6F4NDF3OM"}
+[2026-06-09 16:51:55 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNM6F4NDF3OO:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNM6F4NDF3OO"}
+System.ArgumentException: Cloud name must be specified in Account!
+   at CloudinaryDotNet.ApiShared..ctor(Account account)
+   at CloudinaryDotNet.Api..ctor(Account account)
+   at CloudinaryDotNet.Cloudinary..ctor(Account account)
+   at AuthService.Application.Services.CloudinaryService..ctor(IConfiguration configuration) in C:\Users\Informatica\Downloads\react native iosef\client-user\authentication-service\auth-service\src\AuthService.Application\Services\CloudinaryService.cs:line 10
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method27(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Downloads\react native iosef\client-user\authentication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
+[2026-06-09 16:51:55 INF] HTTP POST /api/v1/auth/register responded 400 in 68.1640 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNM6F4NDF3OO:00000001","ConnectionId":"0HNM6F4NDF3OO"}
+[2026-06-09 16:58:46 INF] User sdfg registered successfully {"EventId":{"Id":1001,"Name":"LogUserRegistered"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"2ea2fb15-3e1f-4d35-a100-8a0bc9f3c108","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNM6F4NDF3OP:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNM6F4NDF3OP"}
+[2026-06-09 16:58:46 INF] HTTP POST /api/v1/auth/register responded 201 in 361.6968 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNM6F4NDF3OP:00000001","ConnectionId":"0HNM6F4NDF3OP"}
+[2026-06-09 16:58:46 ERR] SMTP settings are not properly configured {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"2ea2fb15-3e1f-4d35-a100-8a0bc9f3c108","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNM6F4NDF3OP:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNM6F4NDF3OP"}
+[2026-06-09 16:58:46 ERR] Failed to send email {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"2ea2fb15-3e1f-4d35-a100-8a0bc9f3c108","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNM6F4NDF3OP:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNM6F4NDF3OP"}
+System.InvalidOperationException: SMTP settings are not properly configured
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Users\Informatica\Downloads\react native iosef\client-user\authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 94
+[2026-06-09 16:58:46 ERR] Failed to send verification email {"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"2ea2fb15-3e1f-4d35-a100-8a0bc9f3c108","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNM6F4NDF3OP:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNM6F4NDF3OP"}
+System.InvalidOperationException: Failed to send email: SMTP settings are not properly configured
+ ---> System.InvalidOperationException: SMTP settings are not properly configured
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Users\Informatica\Downloads\react native iosef\client-user\authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 94
+   --- End of inner exception stack trace ---
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Users\Informatica\Downloads\react native iosef\client-user\authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 171
+   at AuthService.Application.Services.EmailService.SendEmailVerificationAsync(String email, String username, String token) in C:\Users\Informatica\Downloads\react native iosef\client-user\authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 29
+   at AuthService.Application.Services.AuthService.<>c__DisplayClass9_0.<<RegisterAsync>b__0>d.MoveNext() in C:\Users\Informatica\Downloads\react native iosef\client-user\authentication-service\auth-service\src\AuthService.Application\Services\AuthService.cs:line 140
